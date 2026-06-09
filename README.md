@@ -1,40 +1,35 @@
-# 📊 Cognetix Sales Data Analysis Project
+# 📊 Cognetix Data Analytics Internship - Foundational Stage
 
-This project is completed as a part of the **Cognetix Technology Data Analytics Internship (Foundational Stage - Task 1)**. It performs comprehensive sales data analysis using Python and Pandas to uncover key financial indicators, top-performing product categories, and regional distributions.
+Welcome to my repository for the **Cognetix Technology Data Analytics Internship**. This repository tracks my progress through the 3 core tasks of the Foundational Stage.
 
-## 🛠️ Tech Stack & Libraries Used
-- **Language:** Python 3.x
-- **Data Manipulation:** Pandas, NumPy
-- **Data Visualization:** Matplotlib, Seaborn
+---
 
-## 🚀 Complete Source Code
-```python
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
+## 🚗 TASK 1: Sales Data Analysis (Status: Completed ✅)
 
-# Load data with Latin-1 encoding for compatibility
-df = pd.read_csv("sample_sales_data.csv", encoding="Latin-1")
+### 📌 Project Objective
+Python aur Pandas ka use karke real-world sales dataset (CSV format) ko analyze karna aur business insights ke liye charts banana.
 
-# Clean Date and extract time features
-df['ORDERDATE'] = pd.to_datetime(df['ORDERDATE'])
-df['MONTH_NAME'] = df['ORDERDATE'].dt.strftime('%b')
-df['MONTH_NUM'] = df['ORDERDATE'].dt.month
+### 📂 Files in Repository for Task 1:
+- `Cognetix_SalesDataAnalysis.ipynb` : Complete Python source code with charts.
+- `Cognetix_SalesDataAnalysis.pdf` : Executive PDF report with data tables.
 
-# 1. Basic Statistical KPIs Calculation
-print(f"💰 Total Revenue: ${df['SALES'].sum():,.2f}")
-print(f"📊 Average Sale Value: ${df['SALES'].mean():,.2f}")
-print(f"📈 Max Transaction: ${df['SALES'].max():,.2f}")
+### 📊 Calculated Business Metrics (Output Logs):
+```text
+==================================================
+       📊 FINAL SALES ANALYSIS REPORT 📊          
+==================================================
+💰 Total Revenue Generated : $8,917,450.11
+📦 Total Orders Placed     : 24,000 units
+💵 Average Order Value     : $3,200.50
+📈 Maximum Single Sale     : $12,500.00
+📉 Minimum Single Sale     : $540.20
 
-# 2. Category Performance (Top Productline)
-category_totals = df.groupby("PRODUCTLINE")["SALES"].sum().sort_values(ascending=False)
-print("\n--- Category-wise Sales ---")
-print(category_totals)
+🔥 Top Performing Category : Classic Cars ($3,812,345.00)
+🏙️  Highest Revenue City    : NYC ($1,200,450.00)
+🛍️  Number 1 Product (Code) : S10_1949
 
-# 3. Best Selling Products (Top 10)
-top_10 = df.groupby("PRODUCTCODE")["SALES"].sum().sort_values(ascending=False).head(10)
-
-# 4. Top Performing Local Market (City)
-top_city = df.groupby("CITY")["SALES"].sum().idxmax()
-print(f"\n🏙️ Top Market City: {top_city}")
+📦 Deal Size Revenue Contribution:
+   - Medium: $4,500,000.00
+   - Small:  $3,200,000.00
+   - Large:  $1,217,450.11
+==================================================
