@@ -7,7 +7,7 @@ Welcome to my repository for the **Cognetix Technology Data Analytics Internship
 ## 🚗 TASK 1: Sales Data Analysis (Status: Completed ✅)
 
 ### 📌 Project Objective
-Python aur Pandas ka use karke real-world sales dataset (CSV format) ko analyze karna aur business insights ke liye charts banana.
+Analyzing a real-world sales dataset (CSV format) using Python and Pandas to uncover business insights and build data-driven charts
 
 ### 📂 Files in Repository for Task 1:
 - `Cognetix_SalesDataAnalysis.ipynb` : Complete Python source code with charts.
